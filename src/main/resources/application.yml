@@ -1,6 +1,6 @@
 # global spring config
 spring:
   application:
-    name: springboot-dev-template
+    name: code-sandbox
   profiles:
     active: local

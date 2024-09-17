@@ -4,7 +4,7 @@
 
     <springProperty scope="context" name="LOG_PATH" source="LOG_PATH"/>
 
-    <property name="CONTEXT_NAME" value="springboot-dev-template"/>
+    <property name="CONTEXT_NAME" value="code-sandbox"/>
     <property name="LOG_PATH" value="${LOG_PATH}"/>
     <property name="MAX_FILE_SIZE" value="100MB"/>
     <property name="MAX_HISTORY" value="30"/>
