@@ -24,7 +24,7 @@ public class RequestLogAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RequestLogAspect.class);
 
-    @Pointcut("execution(* com.youyi.example.controller..*.*(..))")
+    @Pointcut("execution(* com.youyi.sandbox.controller..*.*(..))")
     public void pointCut() {
     }
 

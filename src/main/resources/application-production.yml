@@ -1,0 +1,6 @@
+# web
+server:
+  port: 8081
+
+# log path
+LOG_PATH: /home/logs

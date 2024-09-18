@@ -23,7 +23,7 @@ public class ExceptionHandlerAspect {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionHandlerAspect.class);
 
-    @Pointcut("execution(* com.youyi.example.controller..*.*(..))")
+    @Pointcut("execution(* com.youyi.sandbox.controller..*.*(..))")
     public void pointCut() {
     }
 

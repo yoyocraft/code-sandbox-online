@@ -16,4 +16,4 @@ knife4j:
         group-name: default
         api-rule: package
         api-rule-resources:
-          - com.youyi.example.controller
+          - com.youyi.sandbox.controller

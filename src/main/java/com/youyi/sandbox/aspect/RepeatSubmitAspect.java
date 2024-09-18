@@ -31,7 +31,7 @@ public class RepeatSubmitAspect {
             .build();
 
 
-    @Pointcut("execution (* com.youyi.example.controller..*.*(..))")
+    @Pointcut("execution (* com.youyi.sandbox.controller..*.*(..))")
     public void pointCut() {
     }
 

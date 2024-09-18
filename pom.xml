@@ -28,8 +28,6 @@
         <commons-collections4.version>4.5.0-M1</commons-collections4.version>
         <fastjson2.version>2.0.52</fastjson2.version>
         <mybatis-starter.version>2.2.2</mybatis-starter.version>
-        <knife4j-openapi2-starter.version>4.4.0</knife4j-openapi2-starter.version>
-        <powermock.version>2.0.9</powermock.version>
         <docker-java.version>3.4.0</docker-java.version>
 
         <!-- plugin -->
@@ -73,13 +71,6 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-        </dependency>
-
-        <!-- openapi -->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
-            <version>${knife4j-openapi2-starter.version}</version>
         </dependency>
 
         <!-- docker -->

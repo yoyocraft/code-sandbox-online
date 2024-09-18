@@ -3,6 +3,7 @@ package com.youyi.sandbox.core.container;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 @Getter
 @Setter
+@Component
 @ConfigurationProperties("code-sandbox.pool")
 public class ContainerPoolProperties {
 
