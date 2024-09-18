@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 @Setter
 @Getter
 @Component
-@ConfigurationProperties(prefix = "code-sandbox:config")
+@ConfigurationProperties(prefix = "code-sandbox.config")
 public class ContainerProperties {
 
     /**
