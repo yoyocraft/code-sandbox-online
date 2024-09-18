@@ -1,5 +1,6 @@
-package com.youyi.sandbox.executor;
+package com.youyi.sandbox.core.dto.resp;
 
+import com.youyi.sandbox.base.BaseResp;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ExecutorMessage {
+public class ExecutorMessage extends BaseResp {
 
     private Boolean success;
     private String message;

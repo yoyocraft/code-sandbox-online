@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.youyi.sandbox.executor.DockerSandbox
+com.youyi.sandbox.core.execuotor.DockerDAO

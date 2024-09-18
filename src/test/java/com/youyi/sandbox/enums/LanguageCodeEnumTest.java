@@ -1,6 +1,7 @@
 package com.youyi.sandbox.enums;
 
 import com.youyi.sandbox.BaseUnitTest;
+import com.youyi.sandbox.core.enums.LanguageCmdEnum;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

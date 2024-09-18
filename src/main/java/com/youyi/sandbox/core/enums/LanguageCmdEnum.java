@@ -1,4 +1,4 @@
-package com.youyi.sandbox.enums;
+package com.youyi.sandbox.core.enums;
 
 import com.youyi.sandbox.exception.BusinessException;
 import lombok.AllArgsConstructor;
