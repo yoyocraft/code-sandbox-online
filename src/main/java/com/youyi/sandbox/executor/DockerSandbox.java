@@ -9,7 +9,6 @@ import com.github.dockerjava.api.command.ExecCreateCmdResponse;
 import com.github.dockerjava.api.model.Frame;
 import com.github.dockerjava.api.model.HostConfig;
 import com.github.dockerjava.api.model.StreamType;
-import com.github.dockerjava.core.DockerClientBuilder;
 import com.youyi.sandbox.enums.LanguageCmdEnum;
 import com.youyi.sandbox.exception.BusinessException;
 import com.youyi.sandbox.utils.UUIDUtil;
@@ -18,6 +17,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -28,10 +29,18 @@ import java.nio.charset.StandardCharsets;
  * @author yoyocraft
  * @date 2024/09/18
  */
+@Component
 public class DockerSandbox {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DockerSandbox.class);
-    private static final DockerClient DOCKER_CLIENT = DockerClientBuilder.getInstance().build();
+    private final DockerClient dockerClient;
+
+    @Autowired
+    private ContainerProperties containerProperties;
+
+    public DockerSandbox(DockerClient dockerClient) {
+        this.dockerClient = dockerClient;
+    }
 
     /**
      * 执行代码
@@ -39,7 +48,7 @@ public class DockerSandbox {
      * @param languageCmdEnum 代码语言
      * @return 执行信息 {@link ExecutorMessage}
      */
-    public static ExecutorMessage execute(String code, LanguageCmdEnum languageCmdEnum) throws IOException {
+    public ExecutorMessage execute(String code, LanguageCmdEnum languageCmdEnum) throws IOException {
         // 1. 写入文件
         String userDir = System.getProperty("user.dir");
         String language = languageCmdEnum.getLanguage();
@@ -86,13 +95,13 @@ public class DockerSandbox {
      * @param codeFile 源代码文件
      * @return 容器ID
      */
-    private static String createContainer(String codeFile) {
-        CreateContainerCmd containerCmd = DOCKER_CLIENT.createContainerCmd("code-sandbox:latest");
+    private String createContainer(String codeFile) {
+        CreateContainerCmd containerCmd = dockerClient.createContainerCmd(containerProperties.getImage());
 
         HostConfig hostConfig = new HostConfig();
-        hostConfig.withMemory(60L * 1024 * 1024);
-        hostConfig.withMemorySwap(0L);
-        hostConfig.withCpuCount(1L);
+        hostConfig.withMemory(containerProperties.getMemoryLimit());
+        hostConfig.withMemorySwap(containerProperties.getMemorySwap());
+        hostConfig.withCpuCount(containerProperties.getCpuCount());
 
         // 创建容器
         CreateContainerResponse createContainerResponse = containerCmd
@@ -103,13 +112,13 @@ public class DockerSandbox {
                 .withAttachStdout(Boolean.TRUE)
                 .withTty(Boolean.TRUE)
                 .exec();
-
         String containerId = createContainerResponse.getId();
+
         // 启动容器
-        DOCKER_CLIENT.startContainerCmd(containerId).exec();
+        dockerClient.startContainerCmd(containerId).exec();
 
         // 将代码文件复制到容器中
-        DOCKER_CLIENT.copyArchiveToContainerCmd(containerId)
+        dockerClient.copyArchiveToContainerCmd(containerId)
                 .withHostResource(codeFile)
                 .withRemotePath("/box")
                 .exec();
@@ -123,7 +132,7 @@ public class DockerSandbox {
      * @param cmd 执行的命令
      * @return 执行结果 {@link ExecutorMessage}
      */
-    private static ExecutorMessage execCmd(String containerId, String[] cmd) {
+    private ExecutorMessage execCmd(String containerId, String[] cmd) {
         // 正常返回信息
         ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
         // 错误返回信息
@@ -155,14 +164,17 @@ public class DockerSandbox {
                 super.onNext(frame);
             }
         }) {
-            ExecCreateCmdResponse execCompileCmdResponse = DOCKER_CLIENT.execCreateCmd(containerId)
+            ExecCreateCmdResponse execCompileCmdResponse = dockerClient.execCreateCmd(containerId)
                     .withCmd(cmd)
                     .withAttachStdin(Boolean.TRUE)
                     .withAttachStdout(Boolean.TRUE)
                     .withAttachStderr(Boolean.TRUE)
                     .exec();
             String execId = execCompileCmdResponse.getId();
-            DOCKER_CLIENT.execStartCmd(execId).exec(frameAdapter).awaitCompletion();
+            dockerClient
+                    .execStartCmd(execId)
+                    .exec(frameAdapter)
+                    .awaitCompletion(containerProperties.getTimeout(), containerProperties.getTimeUnit());
             return ExecutorMessage.builder()
                     .success(result[0])
                     .message(resultStream.toString())
@@ -182,7 +194,7 @@ public class DockerSandbox {
      * @param containerId 容器ID
      * @param codePath 代码路径
      */
-    private static void cleanFileAndContainer(String containerId, String codePath) throws IOException {
+    private void cleanFileAndContainer(String containerId, String codePath) throws IOException {
         if (StringUtils.isBlank(codePath)) {
             LOGGER.warn("codePath is blank, containerId: {}", containerId);
             return;
@@ -191,7 +203,7 @@ public class DockerSandbox {
         FileUtils.deleteDirectory(new File(codePath));
 
         // 关闭并删除容器
-        DOCKER_CLIENT.stopContainerCmd(containerId).exec();
-        DOCKER_CLIENT.removeContainerCmd(containerId).exec();
+        dockerClient.stopContainerCmd(containerId).exec();
+        dockerClient.removeContainerCmd(containerId).exec();
     }
 }
