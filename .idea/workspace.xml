@@ -5,58 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c66411b-02ea-40a2-9b71-1db197b13113" name="Changes" comment="feat(init): sandbox 初始化">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/constants/ConfigConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/enums/LanguageCmdEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/executor/DockerSandbox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/executor/ExecutorMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/executor/ExecutorReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/utils/UUIDUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/youyi/sandbox/enums/LanguageCodeEnumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/ExceptionHandlerAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/ExceptionHandlerAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/LoggedCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/LoggedCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/LoggedCheckAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/LoggedCheckAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/ParameterCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/ParameterCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/ParameterCheckAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/ParameterCheckAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/RepeatSubmitAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/RepeatSubmitAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/RequestLogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/RequestLogAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/aspect/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/aspect/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/base/BaseDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/base/BaseDO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/base/BaseReq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/base/BaseReq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/base/BaseResp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/base/BaseResp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/base/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/base/PageResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/base/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/base/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/config/AsyncThreadPoolConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/config/AsyncThreadPoolConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/config/DataSourceConfigLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/config/MvcJsonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/config/MvcJsonConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/constants/ConfigConstant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/constants/SymbolConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/constants/SymbolConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/controller/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/controller/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/dao/SequenceDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/entity/SequenceDO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/enums/ReturnCodeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/enums/ReturnCodeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/exception/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/exception/BusinessException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/lock/DistributedLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/lock/DistributedLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/lock/LocalLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/lock/LocalLock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/lock/LockTemplateSupport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/youyi/sandbox/lock/LockTemplateSupport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/service/SequenceService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/support/DoTransactionCompletion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/youyi/example/utils/TransactionUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SequenceMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/youyi/example/BaseIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/youyi/sandbox/BaseIntegrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/youyi/example/BaseTransactionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/youyi/example/BaseUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/youyi/sandbox/BaseUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/youyi/example/BaseWithoutTransactionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/youyi/sandbox/BaseWithoutTransactionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -90,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.LanguageCodeEnumTest.test_resolve.executor": "Run",
     "Maven.code-sandbox [clean,compile].executor": "Run",
     "Maven.code-sandbox [clean].executor": "Run",
     "Maven.code-sandbox [compile].executor": "Run",
@@ -100,15 +69,38 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+    "settings.editor.selected.configurable": "editing.templates"
   }
 }]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn clean compile" />
       <command value="mvn clean" />
       <command value="mvn compile" />
+      <command value="mvn clean compile" />
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="LanguageCodeEnumTest.test_resolve" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="code-sandbox" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.youyi.sandbox.enums.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.youyi.sandbox.enums" />
+      <option name="MAIN_CLASS_NAME" value="com.youyi.sandbox.enums.LanguageCodeEnumTest" />
+      <option name="METHOD_NAME" value="test_resolve" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LanguageCodeEnumTest.test_resolve" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -136,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726581043719</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(init): sandbox 初始化">
+      <option name="closed" value="true" />
+      <created>1726581095989</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726581095989</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
