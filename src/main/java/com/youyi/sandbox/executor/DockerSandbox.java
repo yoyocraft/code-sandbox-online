@@ -35,11 +35,11 @@ public class DockerSandbox {
 
     /**
      * 执行代码
-     * @param languageCmdEnum 代码语言
      * @param code 代码
+     * @param languageCmdEnum 代码语言
      * @return 执行信息 {@link ExecutorMessage}
      */
-    public static ExecutorMessage execute(LanguageCmdEnum languageCmdEnum, String code) throws IOException {
+    public static ExecutorMessage execute(String code, LanguageCmdEnum languageCmdEnum) throws IOException {
         // 1. 写入文件
         String userDir = System.getProperty("user.dir");
         String language = languageCmdEnum.getLanguage();
